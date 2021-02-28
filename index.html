@@ -15,6 +15,8 @@
     <div class="page-contents">
         <div class="map-input">
             <form id="travel-form">
+                <!-- something to put in, possible some examples so that people  -->
+                <!-- know how to fill in everything (orgin, destination, time format) -->
                 <input type="text" id="origin" name="origin" placeholder="Where from?" required>
                 <img class="right-arrow-icon" src="right-arrow.svg" alt="Right arrow">
                 <input type="text" id="destination" name="destination" placeholder="Where to?" required>
@@ -23,6 +25,16 @@
                 <input type="submit" form="travel-form" id="submit-button" value="Go">
             </form>
         </div>
+        <div class="current-position">
+            <form id="currentPosition">
+                <input id="currentPositionBtn" type="button" name="currentPositionBtn" value="Click for Current Position"/>
+            </form>            
+        </div>    
+        <div class="current-origin">
+            <form id="currentOrigin">
+                <input id="currentOriginBtn" type="button" name="currentOriginBtn" value="Click to Use Current Position as Origin"/>
+            </form>            
+        </div>      
         <div id="map"></div>
         <script
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIwzALxUPNbatRBj3Xi1Uhp0fFzwWNBkE&callback=initMap&libraries=&v=weekly"

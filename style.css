@@ -59,6 +59,14 @@ body {
     border-radius: 5%;
 }
 
+#currentPositionBtn {
+    width: 155px;
+    color: #eeeeee;
+    background-color: #5bb0fc;
+    border: none;
+    border-radius: 5%;
+}
+
 .map-input {
     grid-row: 1;
 }
