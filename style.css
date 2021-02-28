@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+} 
+
+.top-nav {
+    width: 100%;
+    background: #232323;
+    padding: 10px 30px 2px;
+}
+
+.title {
+    font-size: 32px;
+    color: #e1e1e1;
+}
+
+.page-contents {
+    display: grid;
+    grid-template-columns: 700px 320px;
+    grid-gap: 30px;
+    margin: 30px; 
+}
+
+#travel-form {
+    display: flex;
+    flex-direction: row;
+}
+
+#origin, #destination, #start-time {
+    border: #878787 1px solid;
+    border-radius: 3%;
+}
+
+#origin, #destination {
+    width: 150px;
+    height: 35px;
+    padding: 0 5px;
+}
+
+#start-time {
+    margin: 0 24px;
+    width: 239px;
+    padding: 0 5px;
+}
+
+.right-arrow-icon {
+    width: 20px;
+    margin: 0 10px;
+}
+
+#submit-button {
+    width: 75px;
+    color: #eeeeee;
+    background-color: #5bb0fc;
+    border: none;
+    border-radius: 5%;
+}
+
+.map-input {
+    grid-row: 1;
+}
+
+#map {
+    height: 400px;
+    border-radius: 1%;
+    grid-row: 2;
+}
+
+.location-list {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+}
