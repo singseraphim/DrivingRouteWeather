@@ -4,6 +4,7 @@ var directionsRenderer;
 var geocoder;
 var currentPosLat;
 var currentPosLon;
+var gotCurrentLoc;
 
 function initMap() {
     geocoder = new google.maps.Geocoder();
@@ -17,7 +18,7 @@ function initMap() {
     directionsRenderer.setMap(map);
 }
 
-function getCurrentPosition() {
+async function getCurrentPosition() {
 /*****************************************************************************/
     //code used for panning to the current location on the map
     infoWindow = new google.maps.InfoWindow();
@@ -29,6 +30,8 @@ function getCurrentPosition() {
             lat: position.coords.latitude,
             lng: position.coords.longitude,
           };
+          currentPosLat = position.coords.latitude;
+          currentPosLon = position.coords.longitude;
           infoWindow.setPosition(pos);
           infoWindow.setContent("Location found.");
           infoWindow.open(map);
@@ -37,21 +40,22 @@ function getCurrentPosition() {
         () => {
           handleLocationError(true, infoWindow, map.getCenter());
         }
-      );
+      );      
     } else {
       // Browser doesn't support Geolocation
       handleLocationError(false, infoWindow, map.getCenter());
     }
+    return;
 /*****************************************************************************/
-}
+};
 
-function useCurPosAsOrigin() {
-    getCurrentPosition();
-    window.onload = function() {
-        document.getElementById("origin").innerHTML = "utah";
-    }
+async function useCurPosAsOrigin() {
+    await getCurrentPosition();
+    var tempText = currentPosLat + "," + currentPosLon;
+    var tempSomething = document.getElementById("origin");
+    tempSomething.value = tempText;
     //alert("button clicked");
-}
+};
 
 function calcRoute(event) {
     event.preventDefault();
